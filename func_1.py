@@ -3,8 +3,6 @@ Lesson about funcs
 iterators, generators, comprehensions
 """
 
-
-
 from functools import reduce
 from operator import mul
 from time import time
@@ -51,7 +49,6 @@ def demo_lines():
     """
 
     online = "line1\nline2"
-
     print(multiline)
     print(online)
 
