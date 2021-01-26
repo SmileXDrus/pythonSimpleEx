@@ -179,6 +179,7 @@ def timing_dec(func):
     print("returning decorated")
     return wrapper
 
+
 def demo_wo_decorators():
     res = time_func(power, 10_000_000_000, 1_000)
     print("got res", res)
@@ -190,16 +191,14 @@ def demo_wo_decorators():
     print("got res", res)
 
 
-
 # main()
-
 # demo_wo_decorators()
-
 # demo decorators
 
 @timing_dec
 def new_power(a, p=2):
     return a ** p
+
 
 # new_power = timing_dec(new_power)
 
@@ -241,8 +240,13 @@ res = reduce(mul, values_to_mul)
 print("reduce result:", res)
 
 
-#def accept_kwargs(**kwargs):
-#    print(kwargs)
+# kwargs
 
 
-#accept_kwargs(foo="bar", spam="eggs", baz=123)
+def print_pet_names(owner, **pets):
+    print(f"Owner Name: {owner}")
+    for pet, name in pets.items():
+        print(f"{pet}: {name}")
+
+
+print_pet_names("Jonathan", dog="Brock", fish=["Larry", "Curly", "Moe"], turtle="Shelldon")
