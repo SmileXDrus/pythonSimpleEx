@@ -1,15 +1,15 @@
 import os
-
+# docs:
 
 def demo_os_base():
     print(os.name)
     # print(os.environ)
     print(os.environ['PATH'])
-    print('Текущая директория:', os.getcwd())
     print(os.curdir)
 
     cwd = os.getcwd()
-    subdir = os.path.join(cwd, 'subdir')
+    print('Текущая директория:', cwd)
+    subdir = os.path.join(cwd, '../subdir')
     print(subdir)
     try:
         os.mkdir(subdir)
@@ -23,18 +23,18 @@ def demo_os_base():
 
 # open file/create
 def demo_file():
-    filename = 'file.txt'
+    filename = '../file.txt'
     with open(filename, 'w'):
         pass
 
-    print(os.listdir("."))
+    print(os.listdir(".."))
 
     # os.remove()
     os.unlink(filename)  # remove created file
 
 
 def demo_walk():
-    for root, dirs, files in os.walk('.'):
+    for root, dirs, files in os.walk('..'):
         print('root:', root)
         print('dirs:')
         for d in dirs:
@@ -44,14 +44,16 @@ def demo_walk():
             print('-', f)
 
 
-# demo_os_base()
-# demo_file()
-# demo_walk()
-
 def demo_structure_dir():
     cwd = os.getcwd()
     print('cwd:', cwd)
     print('base name cwd:', os.path.basename(cwd))
     print('dir name cwd:', os.path.dirname(cwd))
+    print(os.path.exists(cwd))
+    # print(os.path.split(cwd))
 
+
+demo_os_base()
+# demo_file()
+# demo_walk()
 demo_structure_dir()
