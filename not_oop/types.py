@@ -119,7 +119,6 @@ array_of_arrays = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 print(array_of_arrays)
 for arr in array_of_arrays:
     print(arr)
-#
 
 d = {
     1: 'A',
